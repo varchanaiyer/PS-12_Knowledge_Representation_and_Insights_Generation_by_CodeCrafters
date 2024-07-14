@@ -17,10 +17,7 @@ This project focuses on developing an AI-based solution for knowledge representa
 ## Installation (To Run the Project):
 
 1. Clone the repository
-    ```bash
-    git clone <repository_url>
-    cd <repository_name>
-    ```
+    
 2. Set Up a Virtual Environment
    It is recommended to use a virtual environment to manage dependencies. You can set up a virtual environment using venv:
 
