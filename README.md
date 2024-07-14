@@ -66,8 +66,8 @@ This project focuses on developing an AI-based solution for knowledge representa
     │   │   ├── pranav.jpeg
     │   │   ├── Yash.jpg
     │   │   ├── Yash_d.jpg
-    │   │   ├── rrkarwa.jpeg
-    │   │   ├── auchaudhari.jpg
+    │   │   ├── rr_karwa.jpeg
+    │   │   ├── au_chaudhari.jpg
     │   ├── styles/
     │   │   ├── style.css
     │   │   ├── style_out.css
