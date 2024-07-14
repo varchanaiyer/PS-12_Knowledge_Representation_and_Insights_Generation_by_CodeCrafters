@@ -48,7 +48,7 @@ This project focuses on developing an AI-based solution for knowledge representa
 ## Project Structure
    The project structure is as follows:
 
-    knowledge_representation 
+    Complete Code 
     ├── app.py                 
     ├── templates/              
     │   ├── index.html
@@ -66,11 +66,12 @@ This project focuses on developing an AI-based solution for knowledge representa
     │   │   ├── pranav.jpeg
     │   │   ├── Yash.jpg
     │   │   ├── Yash_d.jpg
+    │   │   ├── rrkarwa.jpeg
+    │   │   ├── auchaudhari.jpg
     │   ├── styles/
     │   │   ├── style.css
     │   │   ├── style_out.css
-    ├── uploads/
-    │   ├── Life Expectancy Data
+    ├── Life Expectancy Data 
     └── requirements.txt  
 
 ---
