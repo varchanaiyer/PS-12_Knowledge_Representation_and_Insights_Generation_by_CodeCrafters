@@ -17,15 +17,17 @@ This project focuses on developing an AI-based solution for knowledge representa
 ## Installation (To Run the Project):
 
 1. Clone the repository
+
+2. Open **Complete Code** folder on your editor and follow the instructions given below:
     
-2. Set Up a Virtual Environment
+3. Set Up a Virtual Environment
    It is recommended to use a virtual environment to manage dependencies. You can set up a virtual environment using venv:
 
    ```bash
    python -m venv venv
    source venv/bin/activate
    ```
-3. Install Required Packages
+4. Install Required Packages
    Install the necessary Python packages using pip:
 
    ```bash
@@ -33,15 +35,15 @@ This project focuses on developing an AI-based solution for knowledge representa
    ```
    Ensure requirements.txt includes all dependencies such as Flask, Pandas, Matplotlib, Seaborn, Scikit-learn, and Transformers.
 
-4. Install Additional Dependencies
+5. Install Additional Dependencies
    Make sure you have all the required libraries for running the project.
 
-5. For start the application please run the following command
+6. For start the application please run the following command
 
    ```bash
    python app.py
    ```
-6. Open your web browser and navigate to http://127.0.0.1:5000/ to start using the application.
+7. Open your web browser and navigate to http://127.0.0.1:5000/ to start using the application.
 
 ---
 
