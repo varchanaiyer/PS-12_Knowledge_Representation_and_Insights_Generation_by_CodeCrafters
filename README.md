@@ -91,3 +91,5 @@ This project focuses on developing an AI-based solution for knowledge representa
 ## **Reach out our youtube channel for project tutorial**
 
 https://youtu.be/k0nNWaFWbWA
+
+Special thanks to **Intel Unnati Industrial Training Program 2024**
