@@ -48,6 +48,9 @@ This project focuses on developing an AI-based solution for knowledge representa
 
 ---
 
+## Note:
+   Do not click on Data Preprocessing Option again because data is preprocess at once.
+   
 ## Project Structure
    The project structure is as follows:
 
