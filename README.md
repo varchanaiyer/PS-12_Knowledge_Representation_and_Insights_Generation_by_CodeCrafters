@@ -74,7 +74,8 @@ This project focuses on developing an AI-based solution for knowledge representa
     │   ├── styles/
     │   │   ├── style.css
     │   │   ├── style_out.css
-    ├── Life Expectancy Data 
+    ├── uploads
+    │   ├──Life Expectancy Data 
     └── requirements.txt  
 
 ---
