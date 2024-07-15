@@ -49,7 +49,8 @@ This project focuses on developing an AI-based solution for knowledge representa
 ---
 
 ## Note:
-   Do not click on Data Preprocessing Option again because data is preprocess at once.
+   1. Do not click on Data Preprocessing Option again because data is preprocess at once.
+   2. Make sure that you have proper internet connection to run the project otherwise it may be timeout from browser or may be delay for processing the output.
    
 ## Project Structure
    The project structure is as follows:
