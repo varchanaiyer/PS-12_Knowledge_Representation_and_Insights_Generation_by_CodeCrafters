@@ -84,6 +84,6 @@ This project focuses on developing an AI-based solution for knowledge representa
   2. [Yash Lawankar](https://github.com/devloperYash)
   3. [Yash Dighade](https://github.com/Hitman45-web)
 
-##**Reach Out our youtube for project tutorial**
+## **Reach out our youtube channel for project tutorial**
 
 https://youtu.be/k0nNWaFWbWA
