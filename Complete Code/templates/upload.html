@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% block content %}
+ 
+        <div class="upload-div">
+            <div class="form_div animate__animated animate__fadeIn animate__slower">
+                <fieldset class="fset">
+                    <legend><font size="5">Upload CSV File</font></legend>
+                    <form id="uploadForm" action="" method="post" enctype="multipart/form-data" class="form">
+                        <h4>Choose File:</h4>
+                        <input type="file" name="file" id="fileInput"><br><br>
+                        <input type="submit" value="Upload" class="submit" link="url(overview)">
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+
+    <!--  Loader  element  -->
+    <div class="loader" id="loader"></div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a file.');
+                e.preventDefault();
+                return;
+            }
+
+            if (file.type !== 'text/csv') {
+                alert('Not a CSV file. Please upload a CSV file.');
+                e.preventDefault();
+                return;
+            }
+
+            //Show loader
+            document.getElementById('loader').style.display = 'block';
+        });
+    </script>
+{% endblock %}

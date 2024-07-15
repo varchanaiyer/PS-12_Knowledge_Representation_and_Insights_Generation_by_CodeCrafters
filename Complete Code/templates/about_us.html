@@ -1,0 +1,201 @@
+{% extends "index.html" %}
+{% block content %}
+<style>
+            .about-us .faculty-mentors {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .faculty-member {
+            background: #333;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 240px;
+            height: 350px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .faculty-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .faculty-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .faculty-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .faculty-member .info {
+            text-align: center;
+            padding: 10px;
+            color: #fff;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .faculty-member .info h3 {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #ff9f00;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .faculty-member .info p {
+            margin: 5px 0;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .faculty-member .info a {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .faculty-member .info img {
+            width: 24px;
+            height: 24px;
+            margin-left: 5px;
+        }
+
+</style>
+        <main class="main-about">
+            <section class="about-us animate__animated animate__slideInUp">
+                <div class="container-about">
+                    <div class="intro">
+                        <h1 class="h1-about">About Us</h1>
+                        <p>We are <b>Team CodeCrafters</b> from <b>PRMIT Badnera’s Computer Science Department</b>. As passionate tech enthusiasts, we thrive on exploring the latest innovations and pushing the boundaries of what’s possible. Our project owes its professionalism to the invaluable guidance of our mentors, including <b>Dr. R. R. Karwa, Prof. A. U. Chaudhari, and the Intel Mentors</b>.</p>
+                    </div>
+                    <h1>Faculty Mentors</h1><br>
+                    <div class="faculty-mentors">
+                        
+                        <div class="faculty-member">
+                            <img src="{{ url_for('static', filename='images/rr_karwa.jpg') }}" alt="Dr. R. R. Karwa">
+                            <div class="info">
+                                <h3>Dr. R. R. Karwa</h3>
+                                <p>Email: rrkarwa@mitra.ac.in</p>
+                            </div>
+                        </div>
+                        <div class="faculty-member">
+                            <img src="{{ url_for('static', filename='images/au_chaudhary.jpg') }}" alt="Prof. A. U. Chaudhari">
+                            <div class="info">
+                                <h3>Prof. A. U. Chaudhari</h3>
+                                <p>Email:auchaudhari@mitra.ac.in</p>
+                            </div>
+                        </div>
+                    </div>
+                    <center><h1>Team Members</center></h1><br>
+                    <div class="team">
+                        <div class="team-member">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ url_for('static', filename='images/pranav.jpeg') }}" alt="pranav rajput">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="h3-about">Contribution : </h3>
+                                        <div class="name">
+                                            <ul class="ul-about">
+                                                <li class="li-about">Data Preprocessing </li>
+                                               <li class="li-about"> Visualization</li>
+                                                <li class="li-about">Scalability</li>
+                                                <li class="li-about">Backend Development</li>
+                                                <li class="li-about">Report</li>
+                                                <li class="li-about">Parallel Processing</li>
+                                                <li class="li-about">Dataset Finding</li>
+                                                <li class="li-about">Model Training</li>
+                                                
+                                            </ul>
+                                        </div>
+                                       
+                                        
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <br>
+                            <b class="b-about">Pranav Rajput (Team Lead)<br>
+                                E-mail: pranavrajput@mitra.ac.in<br>
+                                Mentor:Dr. R R Karwa
+                            </b>
+
+                        </div>
+                        <div class="team-member">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ url_for('static', filename='images/Yash_d.jpg') }}" alt="Yash dighade">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="h3-about">Contribution :</h3>
+                                        <div class="name">
+                                            <ul class="ul-about">
+                                            <li class="li-about">Pattern Identification </li>
+                                           <li class="li-about"> Frontend Development</li>
+                                            <li class="li-about">Algorithms Implementation</li>
+                                            <li class="li-about">Roadmap</li>
+                                            <li class="li-about">Data Collection</li>
+                                            <li class="li-about">Testing</li>
+                                            <li class="li-about">Solution Finding</li>
+                                            
+                                        </ul></div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <b>Yash Dighade<br>
+                                E-mail: Yashdighade@mitra.ac.in<br>
+                                Mentor:Prof. A U Chaudhari
+                            </b>
+                        </div>
+                        <div class="team-member">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ url_for('static', filename='images/Yash.jpg') }}" alt="Member 3">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="h3-about">Contribution : </h3><hr>
+                                        <div class="name">
+                                            <ul class="ul-about">
+                                                <li class="li-about">Knowledge Representation </li>
+                                               <li class="li-about">Visualization</li>
+                                                <li class="li-about">Flask</li>
+                                                <li class="li-about">Frontend Development</li>
+                                                <li class="li-about">Connectivity</li>
+                                                <li class="li-about">Insight Generation</li>
+                                                <li class="li-about">Planning</li>
+                                                <li class="li-about">Error Handling</li>
+                                                
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <b>Yash Lawankar<br>
+                                E-mail: yashlawankar@mitra.ac.in<br>
+                                Mentor:Dr. R R Karwa
+                            </b>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+{% endblock %}

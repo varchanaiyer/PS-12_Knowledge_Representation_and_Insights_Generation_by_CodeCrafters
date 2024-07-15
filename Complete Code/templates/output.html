@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Knowledge Representation And Insight Generation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_out.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style for the scroll-to-top button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="banner">
+        <div class="navbar animate__animated animate__fadeInDown d-flex justify-content-between">
+            <h1 class="title">Knowledge Representation & Insight Generation</h1>
+            <button onclick="printPage()" class="btn btn-primary align-self-center">Print</button>
+        </div>
+        <div class="menu navbar">
+            <ul>
+                <li class="home"><a href="{{ url_for('index') }}" onclick="showLoader(this)">Home</a></li>
+                <li class="overview"><a href="{{ url_for('overview')}}" onclick="showLoader(this)">Overview</a></li>
+                <li class="preprocess"><a id="preprocess-button" href="{{ url_for('preprocess')}}" onclick="handlePreprocessClick(this)">Data Preprocessing</a></li>
+                <li class="knowledge"><a href="{{ url_for('knowledge_representation')}}" onclick="showLoader(this)">Knowledge Representation</a></li>
+                <li class="pattern"><a href="{{ url_for('pattern_identification')}}" onclick="showLoader(this)">Pattern Identification</a></li>
+                <li class="insight"><a href="{{ url_for('insight_generation')}}" onclick="showLoader(this)">Insights Generation</a></li>
+            </ul>
+        </div>
+        {% block content %}
+        <br>
+        <h1 class="h1-overview"><b>DATASET OVERVIEW</b></h1>
+        <div class="container-overview">
+            <h3 class="h3-overview">First 10 Rows</h3>
+            <div class="row">
+                <div class="col-lg-12 table-responsive">
+                    <table class="table table-striped animate__animated animate__fadeInDown">
+                        <tbody>
+                            {{ data_head|safe }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h3 class="h3-overview">Last 10 Rows</h3>
+            <div class="row">
+                <div class="col-lg-12 table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                            {{ data_tail|safe }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <h3 class="h3-overview">Shape of the Dataset</h3>
+                <div class="col-lg-12 table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Shape of the Dataset: {{ shape }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h3 id="data-types" class="h3-overview">Data Types</h3>
+            <div class="row">
+                <div class="col-lg-12 table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                            {{ Data_type|safe }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        <footer class="footer">
+            <div class="container-footer">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li class="li-footer"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="li-footer"><a href="{{ url_for('upload')}}">Upload</a></li>
+                        <li class="li-footer"><a href="{{ url_for('about_us') }}">About Us</a></li>
+                        <li class="li-footer"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="center-content">
+                    <h1><p>Team CodeCrafters</p></h1>
+                </div>
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <div class="person">
+                        <h5>Pranav Rajput</h5>
+                        <a href="https://www.linkedin.com/in/pranav-rajput-9bb446244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/24-Pranav" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="person">
+                        <h5>Yash Lawankar</h5>
+                        <a href="https://www.linkedin.com/in/yash-lawankar-17a752259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/devloperYash" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="person">
+                        <h5>Yash Dighade</h5>
+                        <a href="http://www.linkedin.com/in/yash-dighade-518814177" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Hitman45-web" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="youtube-note">
+                    <h3>Reach Out Our Social Media Platforms</h3><br>
+                    <a href="https://youtu.be/k0nNWaFWbWA" target="blank" class="youtube animate_animated animate_bounce"><i class="fab fa-youtube"></i></a>       <a href="https://github.com/24-Pranav/Knowledge_Representation_and_Insights_Generation_CodeCrafters" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    <h4><p>Check our YouTube channel for tutorials</p></h4>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">&#9650;</button>
+
+    <div id="loader" class="text-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/b5a0e8dd45.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Print function -->
+    <script>
+        function printPage() {
+            window.print();
+        }
+
+        function showLoader(element) {
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('content').classList.add('blur');
+        }
+
+        function handlePreprocessClick(element) {
+            showLoader(element);
+            element.onclick = function(event) {
+                event.preventDefault();
+            }
+            document.getElementById('preprocess-button').onclick = null;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.menu a');
+            const currentPath = window.location.pathname;
+
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Show the button when the user scrolls down 20px from the top
+            window.onscroll = function() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById('scrollToTopBtn').style.display = 'block';
+                } else {
+                    document.getElementById('scrollToTopBtn').style.display = 'none';
+                }
+            };
+        });
+
+        // Scroll to the top of the page
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

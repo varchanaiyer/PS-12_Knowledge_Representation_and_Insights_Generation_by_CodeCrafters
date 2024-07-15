@@ -1,0 +1,12 @@
+Flask
+MarkupSafe
+pandas
+numpy
+matplotlib
+seaborn
+requests
+scikit-learn
+pyspark
+transformers
+torch
+logging

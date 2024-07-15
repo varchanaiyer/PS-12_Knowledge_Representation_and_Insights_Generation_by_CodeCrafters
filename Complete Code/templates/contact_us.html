@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="div-contact">
+    <div class="container-contact">
+        <h1 class="h1-contact">Contact Us</h1>
+        <form id="contactForm">
+            <div class="input-group">
+                <label for="name" >Name:</label>
+                <input type="text" id="name" name="name" required  placeholder="Enter your name">
+            </div>
+            <div class="input-group">
+                <label for="email" >Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your e-mail address">
+            </div>
+            <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required placeholder="Write message here...."></textarea>
+            </div>
+            <button type="submit" class="btn-contact">Send</button>
+        </form>
+        <div id="successMessage" class="success-message">Your message has been successfully sent!</div>
+    </div>
+
+</div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+
+    // Hide form
+    document.getElementById('contactForm').style.display = 'none';
+});
+
+    </script>
+{% endblock %}

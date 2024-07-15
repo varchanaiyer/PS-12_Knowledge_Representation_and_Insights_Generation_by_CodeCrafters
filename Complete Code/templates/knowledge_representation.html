@@ -1,0 +1,96 @@
+{% extends "output.html" %}
+{% block content %}
+<br>
+<h1 class="h1-knowledge"><center><b>KNOWLEDGE REPRESENTATION</b></center></h1>
+<div class="div-know">   
+    <h3 class="h3-knowledge">Data Visualizations: Histogram</h3>
+
+    <div id="histogram-container" class="image-flex">
+        {% for img in hist_images %}
+            <div class="image-item" style="display: {% if loop.index > 4 %}none{% endif %};,">
+                <img src="{{ img }}" alt="Histogram" class="img-fluid mb-3 rounded shadow hist-img">
+            </div>
+        {% endfor %}
+    </div>
+    
+    {% if hist_images|length > 4 %}
+    <button id="show-more-hist-btn" class="btn btn-primary">Show More Histograms</button>
+    {% endif %}
+    
+    <br>
+
+    <h3 class="h3-knowledge" id="boxplot">Data Visualizations: BoxPlot (After Removing Outliers)</h3>
+    
+    <div id="boxplot-container" class="image-flex">
+        {% for img in box_images %}
+            <div class="image-item" style="display: {% if loop.index > 4 %}none{% endif %};">
+                <img src="{{ img }}" alt="Boxplot_for_outliers" class="img-fluid mb-3 rounded shadow box-img">
+            </div>
+        {% endfor %}
+    </div>
+    
+    {% if box_images|length > 4 %}
+    <button id="show-more-box-btn" class="btn btn-primary">Show More BoxPlots</button>
+    {% endif %}
+    
+    <br>
+    <h3 class="h3-knowledge" id="scatter-plot">Scatter Plots with Life Expectancy</h3>
+    
+    <div id="scatter-container" class="image-flex">
+        {% for img in scatter_images %}
+            <div class="image-item" style="display: {% if loop.index > 4 %}none{% endif %};">
+                <img src="{{ img }}" alt="Scatter Plot" class="img-fluid mb-3 rounded shadow scatter-img">
+            </div>
+        {% endfor %}
+    </div>
+    
+    {% if scatter_images|length > 4 %}
+    <button id="show-more-scatter-btn" class="btn btn-primary">Show More Scatter Plots</button>
+    {% endif %}
+    
+    <br>
+    <h3 class="h3-knowledge" id="heatmap">Correlation Heatmap</h3>
+    <img src="{{ heatmap_img_1 }}" alt="Correlation Heatmap" class="img-fluid rounded shadow">
+    <br>
+</div>
+
+<style>
+.image-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-item {
+    flex: 1 1 calc(50% - 10px); /* 50% width minus the gap */
+    box-sizing: border-box;
+}
+</style>
+
+<script>
+document.getElementById('show-more-hist-btn').addEventListener('click', function() {
+    var histImages = document.querySelectorAll('.hist-img');
+    histImages.forEach(function(img) {
+        img.parentElement.style.display = 'block';
+    });
+    this.style.display = 'none';
+});
+
+document.getElementById('show-more-box-btn').addEventListener('click', function() {
+    var boxImages = document.querySelectorAll('.box-img');
+    boxImages.forEach(function(img) {
+        img.parentElement.style.display = 'block';
+    });
+    this.style.display = 'none';
+});
+
+document.getElementById('show-more-scatter-btn').addEventListener('click', function() {
+    var scatterImages = document.querySelectorAll('.scatter-img');
+    scatterImages.forEach(function(img) {
+        img.parentElement.style.display = 'block';
+    });
+    this.style.display = 'none';
+});
+</script>
+
+{% endblock %}

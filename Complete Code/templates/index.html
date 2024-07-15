@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Representation And Insight Generation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar animate_animated animate_fadeInDown">
+            <h1 class="title">Knowledge Representation & Insight Generation</h1>
+        </div>
+        <div class="menu navbar">
+            <ul>
+                <li class="home"><a href="{{ url_for('index') }}">Home</a></li>
+                <li class="upload"><a href="{{ url_for('upload')}}">Upload</a></li>
+                <li class="about"><a href="{{ url_for('about_us') }}">About Us</a></li>
+                <li class="contact"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+            </ul> 
+        </div>
+        {% block content %}
+        <div class="content animate_animated animatefadeIn animate_slower">
+            <h1 class="content-title">
+                <img width="55" height="55" src="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/55/external-data-analysis-seo-and-marketing-smashingstocks-isometric-smashing-stocks.png" alt="external-data-analysis-seo-and-marketing-smashingstocks-isometric-smashing-stocks"/>
+                Welcome to Data<br>Insights Explorer
+            </h1>
+            <p>Uncover valuable insights from your data using<br>
+               advanced data analysis and machine learning techniques
+            </p>
+            <div>
+                <button type="button" onclick="window.location.href='{{ url_for('upload') }}';"><span></span>Let's Go</button><br><br><br><br><br>
+            </div>
+        </div>
+        {% endblock %}
+        <footer class="footer">
+            <div class="container-footer">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li class="li-footer"><a href="{{ url_for('index') }}">Home</a></li>
+                        <li class="li-footer"><a href="{{ url_for('upload')}}">Upload</a></li>
+                        <li class="li-footer"><a href="{{ url_for('about_us') }}">About Us</a></li>
+                        <li class="li-footer"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="center-content">
+                    <h1>Team CodeCrafters</h1>
+                </div>
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <div class="person">
+                        <h5>Pranav Rajput</h5>
+                        <a href="https://www.linkedin.com/in/pranav-rajput-9bb446244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/24-Pranav" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="person">
+                        <h5>Yash Lawankar</h5>
+                        <a href="https://www.linkedin.com/in/yash-lawankar-17a752259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/devloperYash" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="person">
+                        <h5>Yash Dighade</h5>
+                        <a href="http://www.linkedin.com/in/yash-dighade-518814177" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Hitman45-web" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="youtube-note">
+                    <h3>Reach Out Our Social Media Platforms</h3><br>
+                    <a href="https://youtu.be/k0nNWaFWbWA" target="blank" class="youtube animate_animated animate_bounce"><i class="fab fa-youtube"></i></a>    <a href="https://github.com/24-Pranav/Knowledge_Representation_and_Insights_Generation_CodeCrafters" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    <h3><p>Check our YouTube channel for tutorial</p></h3>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/b5a0e8dd45.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.social-links a').hover(function() {
+                $(this).toggleClass('animated');
+            });
+        });
+    </script>
+</body>
+</html>

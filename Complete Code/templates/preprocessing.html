@@ -1,0 +1,118 @@
+{% extends "output.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style_pre.css') }}">
+{% endblock %}
+
+{% block content %}
+<br>
+<h1 class="h1-preprocess"><b>DATA PREPROCESSING</b></center></h1>
+    <div class="container-preprocess">
+
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 class="h3-preprocess" id="missing-values-section">Missing Values</h3>
+                {{ missing_values | safe }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="missing-values-percentage-section">Missing Values Percentage</h3>
+                {{ missing_percentage | safe }}
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="duplicate-rows-section">Duplicate Rows</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Total Number of Duplicate Rows in Dataset : {{ duplicate_rows }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="garbage-values-section">Garbage Values Count</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Total Number of Garbage Values in Dataset : {{ garbage_values }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="numerical-stats-section">Numerical Statistics</h3>
+                {{ numerical_stats | safe }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="categorical-stats-section">Categorical Statistics</h3>
+                {{ categorical_stats | safe }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 class="h3-preprocess" id="outliers-section">Detected Outliers (Before Preprocessing)</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Outliers Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for col, count in outliers_count.items() %}
+                            <tr>
+                                <td>{{ col }}</td>
+                                <td>{{ count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="no-missing-values-section"> Missing Values After Preprocessing</h3>
+                {{ no_missing_values | safe }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="encoded-data-section">Encoded Data (First 10 Rows)</h3>
+                {{ encoded_data | safe }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 table-responsive">
+                <h3 id="garbage-values-section">Dataset Shape After Encoding</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Total Number of Rows and Columns : {{ shape_after_encoding }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,66 @@
+{% extends "output.html" %}
+{% block content %}
+<br>
+<div class="animate_animated animate__fadeInUp">
+<h1  class="h1-pattern"><b>PATTERN IDENTIFICATION</b></h1>
+</div>
+<div class="container-pattern">
+        <h3 class="h3-pattern" id="elbow-plot">Elbow Method for Optimal K</h3>
+        <br>
+        <div class="row">
+                <div class="fig-pattern">
+                <img src="data:image/png;base64,{{ elbow_plot }}" alt="Elbow Plot" class="img-fluid rounded shadow">
+                </div>
+        </div>
+        <br><br>
+        <h3 class="h3-pattern" id="kmeans-plot">KMeans Clusters</h3>
+        <div class="row">
+                <div class="fig-pattern">
+                <img src="{{ kmeans_clusters }}" alt="KMeans Clusters" class="img-fluid rounded shadow">
+                </div>
+        </div>
+        <br><br>
+        <h3 class="h3-pattern" id="dbscan-plot">DBSCAN Clusters</h3>
+        <div class="row">
+                <div class="fig-pattern">
+                <img src="{{ dbscan_clusters }}" alt="DBSCAN Clusters" class="img-fluid rounded shadow">
+                </div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col-lg-12 table-responsive">
+                <hr>
+                <h2 class="text-center text-primary h3-pattern" id="Regration">Regression Analysis</h2>
+                <hr>
+                <br>
+
+                <div class="row div-linearreg">
+                        <div class="col-lg-12 table-responsive">
+                            <h3 class="h3-pattern" id="garbage-values-section">Linear Regression Results</h3><br>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>{{ linear_regression_results }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+        </div>
+        <br>
+
+        <div class="row div-randomforest">
+                <div class="col-lg-12 table-responsive">
+                    <h3 class="h3-pattern" id="garbage-values-section">Random Forest Regression Results</h3><br>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>{{ random_forest_results }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
